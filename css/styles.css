@@ -1,0 +1,346 @@
+/* Variables de color */
+:root {
+  --primary: #FF6B00; /* Naranja principal */
+  --secondary: #333; /* Negro */
+  --accent: #25D366; /* Verde WhatsApp */
+  --light-gray: #f5f5f5;
+  --white: #fff;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: var(--secondary);
+  background: var(--white);
+}
+
+/* Barra de navegación */
+.nav-bar {
+  background: var(--secondary);
+  height: 80px; /* Aumentado para acomodar el logo más grande */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo img {
+  width: 70px; /* Aumentado de 60px a 70px */
+  height: 70px; /* Aumentado de 60px a 70px */
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  object-fit: cover;
+}
+
+/* Cabecera */
+.header {
+  text-align: center;
+  padding: 2px 20px 30px; /* Reducido drásticamente el padding superior a solo 2px */
+  background: var(--light-gray);
+  margin-top: 80px; /* Ajustado para compensar la barra de navegación más alta */
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.location {
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+
+.phone {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.phone:hover {
+  background: #e05d00;
+}
+
+/* Hero Image */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Servicios */
+.services {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  color: var(--primary);
+  padding: 15px 20px 5px;
+}
+
+.service-card p {
+  padding: 0 20px 20px;
+  color: var(--secondary);
+}
+
+/* Zona de cobertura */
+.coverage {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--light-gray);
+}
+
+.coverage h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón para subir */
+.scroll-top {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.scroll-top.visible {
+  display: flex;
+}
+
+.scroll-top:hover {
+  background: #e05d00;
+}
+
+/* Footer */
+footer {
+  background: var(--secondary);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+      padding: 2px 20px 30px; /* Reducido drásticamente para móviles también */
+  }
+
+  .header h1 {
+      font-size: 2rem;
+  }
+
+  .services {
+      grid-template-columns: 1fr;
+  }
+
+  .whatsapp-float {
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      bottom: 20px;
+      right: 20px;
+  }
+
+  .scroll-top {
+      width: 45px;
+      height: 45px;
+      bottom: 80px;
+      right: 20px;
+  }
+}
+
+/* Animaciones */
+/* Añadir esto al final de tu archivo styles.css */
+
+/* Botones flotantes - Versión esquinas opuestas */
+.whatsapp-float, .share-float {
+  position: fixed;
+  bottom: 30px;
+  height: 60px;
+  color: var(--white);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.3s;
+  padding: 0 20px;
+}
+
+.whatsapp-float {
+  right: 30px;
+  background: var(--accent); /* Verde WhatsApp */
+}
+
+.share-float {
+  left: 30px; /* Posicionado a la izquierda */
+  background: var(--primary); /* Naranja principal */
+}
+
+.button-text {
+  margin-left: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  display: none; /* Oculto por defecto en móviles */
+}
+
+/* Efectos hover */
+.whatsapp-float:hover, .share-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Mostrar texto en hover */
+.whatsapp-float:hover .button-text, 
+.share-float:hover .button-text {
+  display: inline;
+}
+
+/* Para pantallas grandes (mostrar texto siempre) */
+@media (min-width: 768px) {
+  .whatsapp-float, .share-float {
+      width: auto;
+      padding: 0 20px;
+  }
+  
+  .button-text {
+      display: inline;
+  }
+}
+
+/* Ajustar posición del botón de subir */
+.scroll-top {
+  bottom: 100px;
+  right: 30px;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 767px) {
+  .whatsapp-float, .share-float {
+      height: 50px;
+      width: 50px;
+      font-size: 25px;
+      bottom: 20px;
+      padding: 0;
+  }
+  
+  .whatsapp-float {
+      right: 20px;
+  }
+  
+  .share-float {
+      left: 20px; /* Posición izquierda en móviles */
+  }
+  
+  .scroll-top {
+      bottom: 80px;
+      right: 20px;
+  }
+  
+  .button-text {
+      display: none;
+  }
+}
+/* Ajustes para el botón de WhatsApp */
+/* Mostrar texto en móviles - Agregar al final del archivo */
+@media (max-width: 767px) {
+  .whatsapp-float, .share-float {
+      width: auto !important;
+      padding: 0 15px !important;
+  }
+  .button-text {
+      display: inline !important;
+      font-size: 14px;
+  }
+}
